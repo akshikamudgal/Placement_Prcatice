@@ -1,64 +1,56 @@
 #include<iostream>
 #include<stack>
 using namespace std;
-
-class Stack {
+class Stack{
     //properties
     public:
-        int *arr;
-        int top;
-        int size;
-
-    // behaviour
-    Stack(int size) {
-        this -> size = size;
-        arr = new int[size];
-        top = -1;
+       int *arr;
+       int top;
+       int size;
+    //behaviour
+    Stack(int size){
+        this-> size=size;
+        arr=new int[size];
+        top=-1;
     }
-
-    void push( int element) {
-        if(size - top > 1) {
+    
+    void push(int element){
+        if(size-top>1){
             top++;
             arr[top] = element;
         }
         else{
-            cout << "Stack OverFlow" << endl;
+            cout<<"Stack Overflow"<< endl;
         }
     }
-
-    void pop() {
-        if(top >=0 ) {
-            top--;
-        }
-        else{
-            cout << "Stack UnderFlow" << endl;
+    void pop(){
+        if(top >=0)
+            pop--;
+        else
+        {
+            cout<<"Stack Underflow"<<endl;
         }
     }
-
-    int peek() {
-        if(top >=0 )
+    int peek(){
+        if(top>=0)
             return arr[top];
         else
         {
-            cout << "Stack is Empty" << endl;
+            cout<<"Stack is empty"<<endl;
             return -1;
         }
     }
-
-    bool isEmpty() {
-        if( top == -1) {
+    bool isEmpty(){
+        if(top==-1){
             return true;
         }
         else{
             return false;
         }
     }
-
 };
-
-
-int main() {
-
+int main(){
+    
 
     Stack st(5);
 
@@ -71,8 +63,8 @@ int main() {
 
     cout << st.peek() << endl;
 
-    st.pop();
-
+    st.pop(); 
+    
     cout << st.peek() << endl;
 
     st.pop();
@@ -89,9 +81,8 @@ int main() {
     else{
         cout << "Stack is not Empty mere dost " << endl;
     }
-
     
-    /*
+     /*
     //creation of stack
     stack<int> s;
     //push operation
@@ -111,3 +102,7 @@ int main() {
 
     return 0;
 }
+    
+        
+        
+        
